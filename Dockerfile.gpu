@@ -95,7 +95,8 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 	pip --no-cache-dir install --upgrade \
 	scrapy scrapyd unirest arrow parsedatetime \
 	datefinder scrapy-mongodb scrapyd-client boto \
-	pymysql scrapyd-client dedupe pyopenssl twisted
+	pymysql scrapyd-client dedupe pyopenssl twisted \
+	&& pip install --upgrade scikit-learn
 
 # Install TensorFlow
 RUN pip --no-cache-dir install https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_ARCH}/tensorflow_${TENSORFLOW_ARCH}-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
