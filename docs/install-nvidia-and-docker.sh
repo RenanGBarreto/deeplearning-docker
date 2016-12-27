@@ -31,16 +31,16 @@ sudo apt-get update
 sudo nvidia-docker run --rm nvidia/cuda nvidia-smi
 
 # Creating the container
-sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /sharedfolder:/root/sharedfolder georanker/deeplearning:gpu /bin/bash
+sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /sharedfolder:/root/sharedfolder renangbarreto/deeplearning:gpu /bin/bash
 
 
 # If you want to build the image, you need to do something like this:
 
-# sudo nvidia-docker build -t georanker/deeplearning:gpu -f Dockerfile.gpu .
-# sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /media/renan/Documentos/GEORANKER/spider-cluster/crawler/anti-piracy:/root/shared georanker/deeplearning:gpu
+# sudo nvidia-docker build -t renangbarreto/deeplearning:gpu -f Dockerfile.gpu .
+# sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /media/renan/Documentos/GEORANKER/spider-cluster/crawler/anti-piracy:/root/shared renangbarreto/deeplearning:gpu
 # or
-# sudo nvidia-docker build -t georanker/deeplearning:cpu -f Dockerfile.cpu .
-# sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /media/renan/Documentos/GEORANKER/spider-cluster/crawler/anti-piracy:/root/shared georanker/deeplearning:cpu
+# sudo nvidia-docker build -t renangbarreto/deeplearning:cpu -f Dockerfile.cpu .
+# sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /media/renan/Documentos/GEORANKER/spider-cluster/crawler/anti-piracy:/root/shared renangbarreto/deeplearning:cpu
 
 
 
