@@ -26,18 +26,18 @@ or
 ### Build from the dockerfiles
 If the images are not avaiable, you can build using one of the following commands:
 
-``` nvidia-docker build -t georanker/deeplearning:gpu -f Dockerfile.gpu . ``` 
+``` nvidia-docker build -t renangbarreto/deeplearning:gpu -f Dockerfile.gpu . ``` 
 
 or
 
-``` nvidia-docker build -t georanker/deeplearning:cpu -f Dockerfile.cpu . ``` 
+``` nvidia-docker build -t renangbarreto/deeplearning:cpu -f Dockerfile.cpu . ``` 
 
 ## How to run
 
 Use the command:
 
-``` sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /shared:/root/shared georanker/deeplearning:gpu``` 
+``` sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /shared:/root/shared renangbarreto/deeplearning:gpu``` 
 
 or 
 
-``` sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /shared:/root/shared georanker/deeplearning:cpu``` 
+``` sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /shared:/root/shared renangbarreto/deeplearning:cpu``` 
