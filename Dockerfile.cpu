@@ -3,9 +3,9 @@ FROM ubuntu:14.04
 MAINTAINER Renan Gomes <email@renangomes.com>
 
 ARG THEANO_VERSION=rel-0.8.2
-ARG TENSORFLOW_VERSION=0.8.0
+ARG TENSORFLOW_VERSION=0.12.0
 ARG TENSORFLOW_ARCH=cpu
-ARG KERAS_VERSION=1.0.3
+ARG KERAS_VERSION=1.2.0
 
 # Install some dependencies
 RUN apt-get update && apt-get install -y \
@@ -75,7 +75,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install other useful Python packages using pip
 RUN pip --no-cache-dir install --upgrade ipython && \
-	pip --no-cache-dir install --upgrade  \
+	pip --no-cache-dir install  \
 		Cython \
 		ipykernel \
 		jupyter \
@@ -85,20 +85,15 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 		six \
 		sphinx \
 		wheel \
-		scipy \
-		pandas \
-		sklearn \
 		patsy \
-		numpy \
 		pydot==1.1.0 \
 		graphviz \
 		zmq \
 		&& \
 	python -m ipykernel.kernelspec
-RUN pip install --upgrade 'sklearn'
-RUN pip install lxml
-RUN pip install --upgrade pyopenssl twisted
-RUN pip install --upgrade scrapy scrapyd unirest arrow parsedatetime datefinder scrapy-mongodb scrapyd-client boto pymysql scrapyd-client dedupe
+RUN pip --no-cache-dir install lxml
+RUN pip --no-cache-dir install --upgrade pyopenssl twisted
+RUN pip --no-cache-dir install --upgrade scrapy scrapyd unirest arrow parsedatetime datefinder scrapy-mongodb scrapyd-client boto pymysql scrapyd-client dedupe
 
 # Install TensorFlow
 RUN pip --no-cache-dir install \
@@ -108,7 +103,7 @@ RUN pip --no-cache-dir install \
 RUN pip --no-cache-dir install git+git://github.com/Theano/Theano.git@${THEANO_VERSION} && \
 	\
 	echo "[global]\ndevice=cpu\nfloatX=float32\nmode=FAST_RUN \
-		\n[lib]\ncnmem=0.5 \
+		\n[lib]\ncnmem=0.6 \
 		\n[nvcc]\nfastmath=True \
 		\n[blas]\nldflag = -L/usr/lib/openblas-base -lopenblas \
 		\n[DebugMode]\ncheck_finite=1" \
@@ -118,7 +113,7 @@ RUN pip --no-cache-dir install git+git://github.com/Theano/Theano.git@${THEANO_V
 RUN pip --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION}
 
 # Update our apt data
-RUN apt-get update
+# RUN apt-get update
 
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/
