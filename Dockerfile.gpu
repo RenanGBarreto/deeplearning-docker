@@ -123,5 +123,6 @@ COPY run_jupyter.sh /root/
 # Expose Ports for TensorBoard (6006), Ipython (8888)
 EXPOSE 6006 8888
 
+VOLUME ["/root/shared"]
 WORKDIR "/root"
 CMD ["/bin/bash"]

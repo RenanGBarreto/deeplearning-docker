@@ -39,8 +39,8 @@ sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /sharedfolder:/root/shar
 # sudo nvidia-docker build -t renangbarreto/deeplearning:gpu -f Dockerfile.gpu .
 # sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /media/renan/Documentos/GEORANKER/spider-cluster/crawler/anti-piracy:/root/shared renangbarreto/deeplearning:gpu
 # or
-# sudo nvidia-docker build -t renangbarreto/deeplearning:cpu -f Dockerfile.cpu .
-# sudo nvidia-docker run -it -p 8888:8888 -p 6006:6006 -v /media/renan/Documentos/GEORANKER/spider-cluster/crawler/anti-piracy:/root/shared renangbarreto/deeplearning:cpu
+# sudo docker build -t renangbarreto/deeplearning:cpu -f Dockerfile.cpu .
+# sudo docker run -it -p 8888:8888 -p 6006:6006 -v /media/renan/Documentos/GEORANKER/spider-cluster/crawler/anti-piracy:/root/shared renangbarreto/deeplearning:cpu
 
 
 
