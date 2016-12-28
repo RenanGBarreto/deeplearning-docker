@@ -9,6 +9,8 @@ Software installed:
 - SCRAPY
 - JUPYTER NOTEBOOK
 - TENSORBOARD
+- SKLEARN
+- HYPEROPT-SKLEARN
 
 ## What do you need
 If you want to use the GPU version, you need to use linux. Software you need: nvidia drives, docker, nvidia-docker

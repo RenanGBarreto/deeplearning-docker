@@ -126,6 +126,9 @@ RUN pip --no-cache-dir install git+git://github.com/Theano/Theano.git@${THEANO_V
 # Install Keras
 RUN pip --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION}
 
+# Install hyperopt-sklearn: http://hyperopt.github.io/hyperopt-sklearn/
+RUN pip --no-cache-dir install git+git://github.com/hyperopt/hyperopt-sklearn.git
+
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/
 
